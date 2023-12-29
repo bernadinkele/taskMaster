@@ -1,7 +1,7 @@
 name: task_master
 description: TaskMaster is a simple and intuitive task management application designed to help you organize your daily life effectively, allowing you to create, organize, and track tasks with ease
 
-publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+publish_to:
 
 version: 1.0.0+1
 
@@ -24,13 +24,8 @@ dev_dependencies:
 flutter:
 
   uses-material-design: true
-
-  # To add assets to your application, add an assets section, like this:
-  # assets:
-  #   - images/a_dot_burr.jpeg
-  #   - images/a_dot_ham.jpeg
-
-
+  assets:
+    - assets/svg/
   fonts:
     - family: DMSans
       fonts:
