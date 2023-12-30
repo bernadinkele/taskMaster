@@ -3,7 +3,7 @@
 ### Get Started
 
 ```shell
-git clone https://github.com/bernadinkele/fashion-app.git
+git clone https://github.com/bernadinkele/taskMaster.git
 flutter clean
 flutter packages get
 flutter run
