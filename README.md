@@ -13,7 +13,7 @@ flutter run
 
 |              Home             |             SignUP          |             SignIn           |
 | :----------------------------------: | :----------------------------------: | :----------------------------------: |
-| <img src="https://github.com/bernadinkele/taskMaster/blob/main/screenShoots/1.png" width="350"> | <img src="https://github.com/bernadinkele/taskMaster/blob/main/screenShoots/2.png"" width="350"> | <img src="https://github.com/bernadinkele/taskMaster/blob/main/screenShoots/3.png" width="350"> |
+| <img src="https://github.com/bernadinkele/taskMaster/blob/main/screenShoots/1.png" width="350"> | <img src="https://github.com/bernadinkele/taskMaster/blob/main/screenShoots/2.png" width="350"> | <img src="https://github.com/bernadinkele/taskMaster/blob/main/screenShoots/3.png" width="350"> |
 
 
 ### ⚡️ My Social Medias
