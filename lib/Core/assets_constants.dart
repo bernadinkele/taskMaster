@@ -6,7 +6,7 @@ class AssetsConstants{
   static const String chart ="$_svg/chart.svg";
   static const String emojiFlag ="$_svg/emoji_flag.svg";
   static const String facebook ="$_svg/facebook.svg";
-  static const String googleLogo ="$_svg/google_logo.svg";
+  static const String googleLogo ="$_svg/2993685_brand_brands_google_logo_logos_icon.svg";
   static const String hiIcon ="$_svg/hi_icon.svg";
   static const String menu ="$_svg/menu.svg";
   static const String profile ="$_svg/profile.svg";

@@ -1,18 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:task_master/Core/app_colors.dart';
-import 'package:task_master/Core/app_config_size.dart';
-import 'package:task_master/Core/assets_constants.dart';
+import 'package:task_master/Core/core.dart';
 
-class DefaultTextField extends StatelessWidget {
-  const DefaultTextField({Key? key}) : super(key: key);
+class SearchField extends StatelessWidget {
+  const SearchField({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return SizedBox(
       height: getHeight(44),
       child: TextFormField(
-
         decoration: InputDecoration(
             hintText: "Find your task here..",
             hintStyle: const TextStyle(
@@ -22,26 +19,24 @@ class DefaultTextField extends StatelessWidget {
               fontWeight: FontWeight.w400,
               height: 0,
             ),
-            contentPadding: EdgeInsets.symmetric(vertical: getHeight(10), horizontal: getWidth(12)),
+            contentPadding: EdgeInsets.symmetric(
+                vertical: getHeight(10), horizontal: getWidth(12)),
             filled: true,
             fillColor: Pallete.placeHolderBacColor,
             border: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(getSize(5)),
-                borderSide: BorderSide.none
-            ),
+                borderSide: BorderSide.none),
             enabledBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(getSize(5)),
-                borderSide: BorderSide.none
-            ),
+                borderSide: BorderSide.none),
             focusedBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(getSize(5)),
-                borderSide: BorderSide.none
-            ),
+                borderSide: BorderSide.none),
             prefixIcon: Padding(
-              padding: EdgeInsets.symmetric(vertical: getHeight(10), horizontal: getWidth(12)),
+              padding: EdgeInsets.symmetric(
+                  vertical: getHeight(10), horizontal: getWidth(12)),
               child: SvgPicture.asset(AssetsConstants.search),
-            )
-        ),
+            )),
       ),
     );
   }

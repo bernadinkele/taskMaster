@@ -1,37 +1,34 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:gap/gap.dart';
-import 'package:task_master/Core/app_colors.dart';
-import 'package:task_master/Core/app_config_size.dart';
-import 'package:task_master/Core/assets_constants.dart';
-import 'package:task_master/Core/utils.dart';
-class TaskTile extends StatelessWidget {
-  const TaskTile({Key? key}) : super(key: key);
+import 'package:task_master/Presentation/TodoHome/models/task_model.dart';
+import 'package:task_master/Core/core.dart';
 
+class TaskTile extends StatelessWidget {
+  const TaskTile({Key? key, required this.task}) : super(key: key);
+  final TaskModel task;
   @override
   Widget build(BuildContext context) {
-    return  Padding(
-      padding:  EdgeInsets.only(bottom: getHeight(12)),
+    return Padding(
+      padding: EdgeInsets.only(bottom: getHeight(12)),
       child: Container(
           width: double.infinity,
           padding: EdgeInsets.all(getSize(14)),
           decoration: BoxDecoration(
               border: Border.all(color: Pallete.borderColor, width: 0.5),
-              borderRadius: BorderRadius.circular(getSize(12))
-
-          ),
-          child:Column(
+              borderRadius: BorderRadius.circular(getSize(12))),
+          child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  const Column(
+                  Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        'Design',
-                        style: TextStyle(
+                        task.type,
+                        style: const TextStyle(
                           color: Pallete.primaryColor,
                           fontSize: 12,
                           fontFamily: 'Poppins',
@@ -39,10 +36,10 @@ class TaskTile extends StatelessWidget {
                           height: 0,
                         ),
                       ),
-                      Gap(4),
+                      const Gap(4),
                       Text(
-                        'The Logo Process',
-                        style: TextStyle(
+                        task.title,
+                        style: const TextStyle(
                           color: Pallete.textColor,
                           fontSize: 16,
                           fontFamily: 'Poppins',
@@ -54,16 +51,16 @@ class TaskTile extends StatelessWidget {
                   ),
                   Container(
                       width: getSize(24),
-                      height:  getSize(24),
-                      padding:  EdgeInsets.all( getSize(2)),
+                      height: getSize(24),
+                      padding: EdgeInsets.all(getSize(2)),
                       decoration: BoxDecoration(
-                          border: Border.all( color: Pallete.borderColor),
-                          shape: BoxShape.circle
-                      ),
-                      child: Icon(Icons.more_horiz, color: Pallete.textColor, size: getSize(20),)
-
-
-                  )
+                          border: Border.all(color: Pallete.borderColor),
+                          shape: BoxShape.circle),
+                      child: Icon(
+                        Icons.more_horiz,
+                        color: Pallete.textColor,
+                        size: getSize(20),
+                      ))
                 ],
               ),
               const Gap(8),
@@ -92,8 +89,7 @@ class TaskTile extends StatelessWidget {
                             Container(
                                 height: getHeight(4),
                                 width: getWidth(93),
-                                color: Pallete.primaryColor
-                            ),
+                                color: Pallete.primaryColor),
                           ],
                         ),
                       ),
@@ -117,7 +113,10 @@ class TaskTile extends StatelessWidget {
                 children: [
                   Row(
                     children: [
-                      SvgPicture.asset(AssetsConstants.calendar, color: Pallete.primaryColor,),
+                      SvgPicture.asset(
+                        AssetsConstants.calendar,
+                        color: Pallete.primaryColor,
+                      ),
                       const Gap(4),
                       const Text(
                         '12 Jan 2023',
@@ -134,7 +133,10 @@ class TaskTile extends StatelessWidget {
                   const Gap(16),
                   Row(
                     children: [
-                      SvgPicture.asset(AssetsConstants.emojiFlag, color: Pallete.primaryColor,),
+                      SvgPicture.asset(
+                        AssetsConstants.emojiFlag,
+                        color: Pallete.primaryColor,
+                      ),
                       const Gap(4),
                       const Text(
                         '20 Mar 2023',
@@ -158,18 +160,18 @@ class TaskTile extends StatelessWidget {
                     children: users.toList(),
                   ),
                   Container(
-
-                    padding: EdgeInsets.symmetric(horizontal: getWidth(20), vertical: getHeight(4)),
+                    padding: EdgeInsets.symmetric(
+                        horizontal: getWidth(20), vertical: getHeight(4)),
                     decoration: ShapeDecoration(
-                      color: Pallete.primaryColor,
+                      color: getLevelsColor(task),
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(41),
                       ),
                     ),
-                    child:const Text(
-                      'High',
-                      style: TextStyle(
-                        color: Pallete.backgroundColor,
+                    child: Text(
+                      task.levels.name,
+                      style: const TextStyle(
+                        color: Colors.white,
                         fontSize: 12,
                         fontFamily: 'Poppins',
                         fontWeight: FontWeight.w400,
@@ -179,10 +181,8 @@ class TaskTile extends StatelessWidget {
                   )
                 ],
               )
-
             ],
-          )
-      ),
+          )),
     );
   }
 }

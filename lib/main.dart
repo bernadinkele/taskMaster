@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:task_master/Presentation/TodoHome/todo_home.dart';
+import 'package:task_master/Core/core.dart';
 void main(){
   runApp(const App());
 }
@@ -11,7 +11,8 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: TodoHomeView(),
+      initialRoute: RoutesName.signIn,
+      onGenerateRoute: Routes.onGenerateRoute,
     );
   }
 }

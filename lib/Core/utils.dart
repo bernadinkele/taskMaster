@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:task_master/Core/app_colors.dart';
 import 'package:task_master/Core/app_config_size.dart';
+import 'package:task_master/Core/enum.dart';
+import 'package:task_master/Presentation/TodoHome/models/task_model.dart';
 
 final participants =[
   "https://s3-alpha-sig.figma.com/img/67c6/b497/21c67377689bbb741fa52493c574b35b?Expires=1704672000&Signature=HhA5xpE2DbSgya522sT3entpcqoAW5j2JenQF9l5ILLmVJsk1b3rZS2pF8Gia2BDNlJJQDHrGwTzc~xx7sMIazausGO4KRaeOK8pOYAgVIlHXq3qLfhL41AhWfjZ4zualF8HdxOuL2JG0Wpr7TaCEEnRVqtF0Wm7eBv70CpPp1aY2qjDv6jrJ0xQdcUsE3NF4r9seoUNEFH4G-deaA4FiYZhBMgncbqy~PwDrhlF8crC43zFdu2O9khJklDf9nytbnpYfUrHUCDaNYudrs70UOR4uNdjEQvwzaz8s0ejATpL2ZQH2U29tysVpRYeC0REGQBZPyNGgrf22nb3OmyZzg__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4",
@@ -24,3 +26,16 @@ final users = participants.asMap().map((key, value){
 
   return MapEntry(key,user);
 }).values.toList();
+
+
+Color getLevelsColor(TaskModel task)
+{
+  switch(task.levels){
+    case Tasklevels.medium:
+      return const Color(0xFFCC00FF);
+    case Tasklevels.high:
+      return Pallete.primaryColor;
+    default:
+      return Pallete.primaryColor;
+  }
+}
